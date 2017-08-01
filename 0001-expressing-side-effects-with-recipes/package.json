@@ -1,0 +1,14 @@
+{
+  "name": "0001-implementing-side-effects-with-free-monads",
+  "version": "0.1.0",
+  "description": "",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "moon-lang": "^0.1.22"
+  }
+}
