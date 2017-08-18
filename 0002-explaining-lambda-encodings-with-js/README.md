@@ -140,6 +140,6 @@ console.log (isZero (c1));
 
 ## Lists
 
-Check out [Moon-Base](https://github.com/MaiaVictor/moon-lang/tree/master/moon-base), it is a growing library written in a subset of JS which has only functions, numbers, maps and strings. As such, most algorithms are λ-encoded. It currently has a bunch of Church-encoded list algorithms, and also merge-sort on Scott-encoded lists. Feel free to contribute.
+Check out [Moon-Base](https://github.com/MaiaVictor/moon-lang/tree/master/base), it is a growing library written in a subset of JS which has only functions, numbers, maps and strings. As such, most algorithms are λ-encoded. It currently has a bunch of Church-encoded list algorithms, and also merge-sort on Scott-encoded lists. Feel free to contribute.
 
 If you have any question about λ-encodings, feel free to open an issue on this repository.
