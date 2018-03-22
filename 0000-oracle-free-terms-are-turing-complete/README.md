@@ -22,6 +22,6 @@ There is, though, a huge subset of λ-terms that is computable without the oracl
 
 2. Would such language allow for natural programming styles?
 
-We now can answer both questions. [This program](hhttps://github.com/MaiaVictor/abstract-algorithm/blob/master/examples/lambda-calculus.js) implements an evaluator of arbitrary λ-terms *as a λ-term that can be evaluated on Lamping's abstract algorithm without the oracle*! It, thus, demonstrates that oracle-free terms are turing-complete. Note that this code is obfuscated and would look much cleaner in a suitable syntax.
+We now can answer both questions. [This program](https://github.com/MaiaVictor/abstract-algorithm/blob/master/examples/lambda-calculus.js) implements an evaluator of arbitrary λ-terms *as a λ-term that can be evaluated on Lamping's abstract algorithm without the oracle*! It, thus, demonstrates that oracle-free terms are turing-complete. Note that this code is obfuscated and would look much cleaner in a suitable syntax.
 
 As such, yes, we could have a language based on this subset. That language would impose some restrictions at compile time, enabling your programs to be computed optimally and in parallel. If someone found those restrictions too bothersome, no problems: he/she can always fallback to a monadic DSL and use whatever programming style he/she prefers.
