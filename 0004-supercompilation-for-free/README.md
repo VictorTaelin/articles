@@ -34,7 +34,7 @@ But what about the [abstract algorithm](https://github.com/MaiaVictor/abstract-a
 
 ```haskell
 zip4 = λf. λa. λb. λtuple.
-  (a λax. λay. λbz. λbw.
+  (a λax. λay. λaz. λaw.
   (b λbx. λby. λbz. λbw.
    tuple (f ax bx) (f ay by) (f az bz) (f aw bw)))
 
