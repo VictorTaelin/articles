@@ -1,0 +1,19 @@
+@apply_n_times #n #f #x //n f x
+@pow           #n #m /m n
+@True          #f #t t
+@False         #f #t f
+@id            #x x
+@not           #b #f #t //b t f
+@xor           #b //b not id
+
+@zip4 #f #a #b #tuple
+  /a #ax #ay #az #aw
+  /b #bx #by #bz #bw
+  ////tuple //f ax bx //f ay by //f az bz //f aw bw
+
+@main
+  @a #tuple ////tuple True True False False
+  @b #tuple ////tuple True False True False
+  ///apply_n_times //pow 2 25 //zip4 xor a b
+
+main

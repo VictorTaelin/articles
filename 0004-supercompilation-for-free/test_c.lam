@@ -1,0 +1,14 @@
+@apply_n_times #n #f #x //n f x
+@peek          #n #x ///n #t /t #x //x #x #r #t //t x #a #b #c ///r a b /a c #x #r #t //t x #a #b #c ///r a b /b c #t //t x #a #b #c c #x #r r
+@pow           #n #m /m n
+@Y             #f /#x /f /x x #x /f /x x
+@O             #xs #O #I /O xs
+@I             #xs #O #I /I xs
+
+@zero /Y #zero /O zero
+
+@succ /Y #succ #xs #O #I //xs I #xs /O /succ xs
+
+@main //peek 64 ///apply_n_times //pow 2 63 succ zero
+
+main
