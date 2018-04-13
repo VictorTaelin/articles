@@ -388,3 +388,32 @@ contract-is-undrainable = ...
 The type of that function says that, no matter what transactions certain contract receives, its balance will never fall to zero. That is a nice property to have in a contract that must be undrainable. You could write as many tests as you want, but you'd never be 100% certain your contract ins undrainable. A proof gives 100% certainty.
 
 That is, IMO, how we will begin trusting smart-contracts that deal with a ton of money. Rather than doing several auditions and writing lots of tests (like we did with TheDAO), we'll, instead, ask for the developers to prove that the contract satisfies certain expectations, which are expressed as specifications (types) that are much easier to read than the code of the contract itself.
+
+---
+
+(edit)
+
+This is, by the way, a much simpler implementation:
+
+```agda
+inc : {n : Nat} -> Bits n -> Bits n
+inc []       = []
+inc (O ∷ xs) = I ∷ xs
+inc (I ∷ xs) = O ∷ inc xs
+
+add : {n : Nat} -> Bits n -> Bits n -> Bits n
+add []       []       = []
+add (O ∷ xs) (O ∷ ys) = O ∷ (add xs ys)
+add (O ∷ xs) (I ∷ ys) = I ∷ (add xs ys)
+add (I ∷ xs) (O ∷ ys) = I ∷ (add xs ys)
+add (I ∷ xs) (I ∷ ys) = inc (I ∷ (add xs ys))
+
+add-comm : {n : Nat} -> (a : Bits n) -> (b : Bits n) -> add a b ≡ add b a
+add-comm []       []       = refl
+add-comm (O ∷ xs) (O ∷ ys) = cong O∷ (add-comm xs ys)
+add-comm (O ∷ xs) (I ∷ ys) = cong I∷ (add-comm xs ys)
+add-comm (I ∷ xs) (O ∷ ys) = cong I∷ (add-comm xs ys)
+add-comm (I ∷ xs) (I ∷ ys) = cong O∷ (cong inc (add-comm xs ys))
+```
+
+Guess my skills are slighly above they were before on this seemingly infinite stairway.
