@@ -1,4 +1,4 @@
-# Supercompilation for free with the abstract algorithm
+# Supercompilation-like performance on the abstract algorithm
 
 The [abstract-algorithm](https://github.com/MaiaVictor/abstract-algorithm) is how I call a very simple (~200 LOC!), elegant abstract machine that evaluates λ-calculus terms optimally. In this article, I'll show 2 small experiments in which my 200-LOC JavaScript evaluator beats GHC (The Glorious Glasgow Haskell Compiler) by a few orders of magnitude.
 
