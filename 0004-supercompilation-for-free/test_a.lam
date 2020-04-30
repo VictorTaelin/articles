@@ -15,7 +15,7 @@
   ::open b #b
   ::fromList :::zipWith f :toList a :toList b t
 
-@main #x x
+@main
   @a #tuple ::::tuple True True False False
   @b #tuple ::::tuple True False True False
   :::apply_n_times ::pow 2 25 ::zip4 xor a b
