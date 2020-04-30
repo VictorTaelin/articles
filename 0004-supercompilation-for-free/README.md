@@ -123,4 +123,16 @@ absal --stats --bruijn test_b
 absal --stats --bruijn test_c
 ```
 
+Alternatively, install Formality with:
+
+```bash
+npm i -g formality
+```
+
+And run:
+
+```
+fm -o test_a
+```
+
 Note those programs have a slightly uglier syntax than what I presented, as I wanted to have a very simple parser. Outputs are obviously λ-encoded, so you may need to understand those in order to interpret them.

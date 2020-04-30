@@ -1,0 +1,18 @@
+apply_n_times (n)=>(f)=>(x)=>n(f, x)
+pow           (n)=>(m)=>m(n)
+True          (f)=>(t)=>t
+False         (f)=>(t)=>f
+id            (x)=>x
+not           (b)=>(f)=>(t)=>b(t,f)
+xor           (b)=>b(not, id)
+zipWith       (f)=>(xs)=>(ys)=>(C)=>(N)=>xs((x)=>(xs)=>(ys)=>ys((y)=>(ys)=>C(f(x,y),xs(ys)),N), (ys)=>N, ys((x)=>(xs)=>(C)=>(N)=>C(x,xs), (C)=>(N)=>N))
+toList        (t)=>t((a)=>(b)=>(c)=>(d)=>(C)=>(N)=>C(a,C(b,C(c,C(d ,N)))))
+fromList      (xs)=>(t)=>xs((x)=>(xs)=>(r)=>xs(r(x)),(r)=>r,t) 
+open          (t)=>(fn)=>t((a)=>(b)=>(c)=>(d)=>fn((t)=>t(a,b,c,d)))
+zip4          (f)=>(a)=>(b)=>(t)=> open(a, (a)=> open(b, (b)=> fromList(zipWith(f,toList(a),toList(b)),t)))
+main
+  let a   = (tuple)=>tuple(True,True,False,False)
+  let b   = (tuple)=>tuple(True,False,True,False)
+  let n25 = (s)=>(z)=>s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(z)))))))))))))))))))))))))
+  let n2  = (s)=>(z)=>s(s(z))
+  apply_n_times(pow(n2,n25),zip4(xor,a),b)
