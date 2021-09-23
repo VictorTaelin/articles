@@ -13,7 +13,7 @@ and' a b = case a of
   True' -> b
   False' -> False'
 
-or' a b = case b of
+or' a b = case a of
  True' -> True'
  False' -> b
 
@@ -43,8 +43,8 @@ False = True => False => False;
 show = bool => bool("True")("False");
 print = bool => console.log(show(bool));
 
-or = a => b => (a (b) (False));
-and = a => b => (a (True) (b));
+or = a => b => (a (True) (b));
+and = a => b => (a (b) (False));
 xor = a => b => (a (b (False) (True)) (b (True) (False)));
 
 print (or (True) (True));
